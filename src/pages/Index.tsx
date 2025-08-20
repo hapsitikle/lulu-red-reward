@@ -49,26 +49,27 @@ const Index = () => {
           </div>
 
           {/* Feature cards */}
-          <div
-            className="grid md:grid-cols-3 gap-6 animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            <FeatureCard
-              icon={<CheckCircle size={24} />}
-              title="Check eligibility"
-              description="Answer a few quick questions to match the offer."
-            />
-            <FeatureCard
-              icon={<User size={24} />}
-              title="Enter real details"
-              description="Use your real name, email, and postcode to avoid being blocked."
-            />
-            <FeatureCard
-              icon={<Send size={24} />}
-              title="Submit"
-              description="See available rewards and get contacted."
-            />
-          </div>
+<div
+  className="grid md:grid-cols-3 gap-6 animate-slide-up"
+  style={{ animationDelay: "0.2s" }}
+>
+  <FeatureCard
+    icon={<CheckCircle size={24} />}
+    title="Click to Start"
+    description="Click the button below to access our reward platform."
+  />
+  <FeatureCard
+    icon={<User size={24} />}
+    title="Complete Tasks"
+    description="Finish simple tasks to earn your reward points. The more tasks you do, the more you earn."
+  />
+  <FeatureCard
+    icon={<Send size={24} />}
+    title="Get Your Card"
+    description="Receive your Lululemon gift card and start shopping."
+  />
+</div>
+
 
           {/* Primary CTA */}
           <div
