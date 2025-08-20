@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Modal } from "@/components/ui/modal";
 import { FeatureCard } from "@/components/FeatureCard";
@@ -6,6 +6,34 @@ import { CheckCircle, User, Send, ArrowRight, Users, Star } from "lucide-react";
 
 const Index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Live Activity numbers
+const [onlineNow, setOnlineNow] = useState(83);     // start at 83
+const [claimsToday, setClaimsToday] = useState(463); // start at 463
+
+useEffect(() => {
+  // Online Now: random walk within [75, 85]
+  const onlineInterval = setInterval(() => {
+    setOnlineNow((prev) => {
+      const delta = Math.floor(Math.random() * 5) - 2; // -2..+2
+      const next = Math.max(75, Math.min(85, prev + delta));
+      return next;
+    });
+  }, 3500); // ~ every 3.5s
+
+  // Claims Today: steadily increments by 1 (slight jitter on cadence)
+  const base = 6000; // 6s
+  const jitter = Math.floor(Math.random() * 3000); // +0–3s
+  const claimsInterval = setInterval(() => {
+    setClaimsToday((prev) => prev + 1);
+  }, base + jitter);
+
+  return () => {
+    clearInterval(onlineInterval);
+    clearInterval(claimsInterval);
+  };
+}, []);
+
 
   const handleClaimClick = () => {
     window.open(
@@ -135,7 +163,7 @@ const Index = () => {
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                 <span className="text-foreground">Online Now</span>
               </div>
-              <span className="text-lulu-red font-semibold">38</span>
+              <span className="text-lulu-red font-semibold">{onlineNow}</span>
             </div>
 
             <div className="flex items-center justify-between">
@@ -143,7 +171,7 @@ const Index = () => {
                 <div className="w-2 h-2 bg-lulu-red rounded-full" />
                 <span className="text-foreground">Claims Today</span>
               </div>
-              <span className="text-lulu-red font-semibold">120</span>
+              <span className="text-lulu-red font-semibold">{claimsToday.toLocaleString()}</span>
             </div>
           </div>
         </div>
