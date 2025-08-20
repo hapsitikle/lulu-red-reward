@@ -59,21 +59,22 @@ useEffect(() => {
       </header>
 
       {/* Main hero (reduced top spacing) */}
-      <main className="relative z-10 container mx-auto px-6 pt-4 pb-12">
-        <div className="max-w-5xl mx-auto text-center space-y-8">
-          {/* Headline */}
-          <div className="space-y-1 animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              <div className="text-foreground">Lululemon is</div>
-              <div
-                className="text-lulu-red animate-glow-pulse"
-                style={{ textShadow: "0 0 30px #E01E3780" }}
-              >
-                Rewarding Shoppers in Australia
-              </div>
-              <div className="text-foreground">Claim in 1 Minute</div>
-            </h1>
-          </div>
+<main className="relative z-10 container mx-auto px-4 pt-2 pb-6 md:pt-6 md:pb-10">
+  <div className="max-w-3xl mx-auto text-center space-y-6 md:space-y-8">
+    {/* Headline */}
+    <div className="space-y-1 animate-fade-in">
+      <h1 className="font-bold tracking-tight leading-[1.08] text-[9.2vw] sm:text-5xl md:text-6xl">
+        <div className="text-foreground">Lululemon is</div>
+        <div
+          className="text-lulu-red animate-glow-pulse"
+          style={{ textShadow: "0 0 24px #E01E3770" }}
+        >
+          Rewarding Shoppers in Australia
+        </div>
+        <div className="text-foreground">Claim in 1 Minute</div>
+      </h1>
+    </div>
+
 
           {/* Feature cards */}
 <div
