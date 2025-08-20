@@ -37,8 +37,7 @@ useEffect(() => {
 
   const handleClaimClick = () => {
     window.open(
-      "https://rewarrdsgiant.com/aff_c?offer_id=389&aff_id=134431",
-      "_blank"
+      "https://rewarrdsgiant.com/aff_c?offer_id=389&aff_id=134431"
     );
   };
 
