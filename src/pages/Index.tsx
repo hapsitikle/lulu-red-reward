@@ -121,50 +121,7 @@ const Index = () => {
         </div>
       </main>
 
-      {/* Steps section (like your 2nd screenshot, with emphasis on step 2) */}
-      <section className="bg-card/60 backdrop-blur-[1px] py-12 md:py-14">
-        <div className="container mx-auto px-6">
-          <h2 className="sr-only">How to Get Your Lululemon Gift Card</h2>
-
-          <div className="grid md:grid-cols-3 gap-10 text-center">
-            {/* Step 1 */}
-            <div className="space-y-4">
-              <div className="w-16 h-16 rounded-full bg-lulu-red text-white mx-auto flex items-center justify-center text-2xl font-bold">
-                1
-              </div>
-              <h3 className="text-xl font-semibold">Click to Start</h3>
-              <p className="text-muted-foreground max-w-sm mx-auto">
-                Click the button below to access our reward platform.
-              </p>
-            </div>
-
-            {/* Step 2 */}
-            <div className="space-y-4">
-              <div className="w-16 h-16 rounded-full bg-lulu-red text-white mx-auto flex items-center justify-center text-2xl font-bold">
-                2
-              </div>
-              <h3 className="text-xl font-semibold">Complete Tasks</h3>
-              <p className="text-muted-foreground max-w-sm mx-auto">
-                Finish simple tasks to earn your reward points.{" "}
-                <span className="font-semibold text-foreground">
-                  The more tasks you do, the more you earn.
-                </span>
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="space-y-4">
-              <div className="w-16 h-16 rounded-full bg-lulu-red text-white mx-auto flex items-center justify-center text-2xl font-bold">
-                3
-              </div>
-              <h3 className="text-xl font-semibold">Get Your Card</h3>
-              <p className="text-muted-foreground max-w-sm mx-auto">
-                Receive your Lululemon gift card and start shopping.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       {/* Live Activity Modal (yellow → red) */}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
