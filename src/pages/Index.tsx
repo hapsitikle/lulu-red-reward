@@ -73,13 +73,10 @@ const Index = () => {
                 className="block text-[11vw] sm:text-6xl md:text-7xl text-lulu-red animate-glow-pulse"
                 style={{ textShadow: "0 0 24px #E01E3780" }}
               >
-                Aussie shoppers
+                Lululemon shoppers
               </span>
 
-              {/* Line 3 */}
-              <span className="block text-[10vw] sm:text-5xl md:text-6xl text-foreground">
-                via our platform
-              </span>
+              
             </h1>
           </div>
 
