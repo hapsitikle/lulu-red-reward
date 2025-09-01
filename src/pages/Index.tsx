@@ -36,7 +36,7 @@ const Index = () => {
 
   const handleClaimClick = () => {
     window.open(
-      "https://rewarrdsgiant.com/aff_c?offer_id=389&aff_id=134431"
+      "https://glitchy.go2cloud.org/aff_c?offer_id=1139&aff_id=134431"
     );
   };
 
