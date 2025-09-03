@@ -113,7 +113,7 @@ const Index = () => {
               onClick={handleClaimClick}
               className="group"
             >
-              Get Reward Points
+              Get Now
               <ArrowRight
                 className="group-hover:translate-x-1 transition-transform duration-300"
                 size={20}
