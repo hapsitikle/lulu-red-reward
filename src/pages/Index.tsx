@@ -65,7 +65,7 @@ const Index = () => {
             <h1 className="font-bold leading-tight tracking-tight text-center">
               {/* Line 1 */}
               <span className="block text-[10vw] sm:text-6xl md:text-7xl text-foreground">
-                Rewards for
+                Exclusive Rewards for
               </span>
 
               {/* Line 2 */}
@@ -76,6 +76,13 @@ const Index = () => {
                 Lululemon shoppers
               </span>
 
+              {/* Line 3 */}
+              <span
+                className="block text-[11vw] sm:text-6xl md:text-7xl text-lulu-red animate-glow-pulse"
+                style={{ textShadow: "0 0 24px #E01E3780" }}
+              >
+                Limited Time
+              </span>
               
             </h1>
           </div>
@@ -87,17 +94,17 @@ const Index = () => {
           >
             <FeatureCard
               icon={<CheckCircle size={24} />}
-              title="Click to Start"
+              title="1. Click to Start"
               description="Click the button below to access our reward platform."
             />
             <FeatureCard
               icon={<User size={24} />}
-              title="Complete Deals"
+              title="2. Complete Deals"
               description="Finish simple deals to earn reward points. The more tasks you do, the more you earn."
             />
             <FeatureCard
               icon={<Send size={24} />}
-              title="Unlock Reward"
+              title="3. Unlock Reward"
               description="Receive your voucher and start shopping."
             />
           </div>
@@ -113,7 +120,7 @@ const Index = () => {
               onClick={handleClaimClick}
               className="group"
             >
-              Get Now
+              Claim Your Reward
               <ArrowRight
                 className="group-hover:translate-x-1 transition-transform duration-300"
                 size={20}
