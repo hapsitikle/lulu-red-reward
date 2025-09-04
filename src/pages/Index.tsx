@@ -77,32 +77,38 @@ const Index = () => {
             </h1>
           </div>
 
-          {/* Feature cards - more compact */}
+          {/* Steps - simple text format */}
           <div
-            className="grid md:grid-cols-3 gap-3 md:gap-4 animate-slide-up"
+            className="text-left max-w-2xl mx-auto space-y-2 animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <FeatureCard
-              icon={<CheckCircle size={20} />}
-              title="1. Click to Start"
-              description="Click the button below to access our reward platform."
-            />
-            <FeatureCard
-              icon={<User size={20} />}
-              title="2. Complete Deals"
-              description="Finish simple deals to earn reward points. The more tasks you do, the more you earn."
-            />
-            <FeatureCard
-              icon={<Send size={20} />}
-              title="3. Unlock Reward"
-              description="Receive your voucher and start shopping."
+            <p className="text-sm md:text-base text-foreground">
+              <span className="font-semibold">1. Click to Start:</span> Click the button below to access our reward platform.
+            </p>
+            <p className="text-sm md:text-base text-foreground">
+              <span className="font-semibold">2. Complete deals:</span> Finish simple deals to earn reward points. The more you do, the more you earn.
+            </p>
+            <p className="text-sm md:text-base text-foreground">
+              <span className="font-semibold">3. Unlock Reward:</span> Receive your voucher and start shopping.
+            </p>
+          </div>
+
+          {/* Proof image */}
+          <div
+            className="animate-slide-up"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <img 
+              src="images/proof.jpg" 
+              alt="Proof of rewards" 
+              className="mx-auto max-w-full h-auto rounded-lg shadow-lg"
             />
           </div>
 
           {/* Primary CTA - reduced spacing */}
           <div
             className="space-y-2 animate-slide-up"
-            style={{ animationDelay: "0.4s" }}
+            style={{ animationDelay: "0.5s" }}
           >
             <Button
               variant="hero"
@@ -125,7 +131,7 @@ const Index = () => {
           {/* Trust indicators - more compact */}
           <div
             className="flex items-center justify-center gap-4 md:gap-6 text-muted-foreground text-sm animate-slide-up"
-            style={{ animationDelay: "0.6s" }}
+            style={{ animationDelay: "0.7s" }}
           >
             <div className="flex items-center gap-2">
               <Users size={14} className="text-lulu-red" />
@@ -141,7 +147,7 @@ const Index = () => {
           {/* Footer note - smaller and more compact */}
           <p
             className="text-[10px] md:text-xs text-muted-foreground max-w-2xl mx-auto leading-tight animate-slide-up"
-            style={{ animationDelay: "0.8s" }}
+            style={{ animationDelay: "0.9s" }}
           >
             This is a promotional experience and is not
             affiliated with or endorsed by Lululemon. By proceeding, you agree
