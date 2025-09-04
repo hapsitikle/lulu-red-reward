@@ -14,7 +14,7 @@ const Index = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-lulu-red/5 to-transparent pointer-events-none" />
 
       {/* Main hero - compressed spacing */}
-      <main className="relative z-10 container mx-auto px-4 py-2">
+      <main className="relative z-10 container mx-auto px-4 pt-8 pb-2">
         <div className="max-w-4xl mx-auto text-center space-y-3 md:space-y-4">
           {/* Headline - smaller and more compact */}
           <div className="animate-fade-in">
