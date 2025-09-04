@@ -3,35 +3,7 @@ import { Button } from "@/components/ui/button";
 // import { Modal } from "@/components/ui/modal";
 import { ArrowRight, Users, Star } from "lucide-react";
 
-const Index = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Live Activity numbers
-  const [onlineNow, setOnlineNow] = useState(83);     // start at 83
-  const [claimsToday, setClaimsToday] = useState(463); // start at 463
-
-  useEffect(() => {
-    // Online Now: random walk within [75, 85]
-    const onlineInterval = setInterval(() => {
-      setOnlineNow((prev) => {
-        const delta = Math.floor(Math.random() * 5) - 2; // -2..+2
-        const next = Math.max(75, Math.min(85, prev + delta));
-        return next;
-      });
-    }, 3500); // ~ every 3.5s
-
-    // Claims Today: steadily increments by 1 (slight jitter on cadence)
-    const base = 6000; // 6s
-    const jitter = Math.floor(Math.random() * 3000); // +0–3s
-    const claimsInterval = setInterval(() => {
-      setClaimsToday((prev) => prev + 1);
-    }, base + jitter);
-
-    return () => {
-      clearInterval(onlineInterval);
-      clearInterval(claimsInterval);
-    };
-  }, []);
 
   const handleClaimClick = () => {
     window.open(
@@ -44,17 +16,6 @@ const Index = () => {
       {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-lulu-red/5 to-transparent pointer-events-none" />
 
-      {/* Top bar - minimal padding */}
-      <header className="relative z-10 flex justify-end p-2 md:p-3">
-        <Button
-          variant="pill"
-          size="pill"
-          onClick={() => setIsModalOpen(true)}
-          className="animate-fade-in"
-        >
-          See Live
-        </Button>
-      </header>
 
       {/* Main hero - compressed spacing */}
       <main className="relative z-10 container mx-auto px-4 py-2">
