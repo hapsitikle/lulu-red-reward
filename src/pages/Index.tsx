@@ -62,14 +62,14 @@ const Index = () => {
           {/* Headline - smaller and more compact */}
           <div className="animate-fade-in">
             <h1 className="font-bold leading-none tracking-tight text-center">
-              {/* Line 1 - smaller text */}
-              <span className="block text-[7vw] sm:text-4xl md:text-5xl text-foreground">
+              {/* Line 1 - slightly bigger text */}
+              <span className="block text-[8vw] sm:text-5xl md:text-6xl text-foreground">
                 Exclusive Rewards for
               </span>
 
-              {/* Line 2 - combined into single line */}
+              {/* Line 2 - combined into single line, slightly bigger */}
               <span
-                className="block text-[8vw] sm:text-5xl md:text-6xl text-lulu-red animate-glow-pulse"
+                className="block text-[9vw] sm:text-6xl md:text-7xl text-lulu-red animate-glow-pulse"
                 style={{ textShadow: "0 0 24px #E01E3780" }}
               >
                 Lululemon shoppers - Limited Time
@@ -98,7 +98,7 @@ const Index = () => {
             className="animate-slide-up"
             style={{ animationDelay: "0.3s" }}
           >
-           <img 
+            <img 
               src="images/proof.jpg" 
               alt="Proof of rewards" 
               className="mx-auto w-48 md:w-64 h-auto rounded-lg shadow-lg"
