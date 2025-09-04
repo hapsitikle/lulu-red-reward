@@ -98,10 +98,10 @@ const Index = () => {
             className="animate-slide-up"
             style={{ animationDelay: "0.3s" }}
           >
-            <img 
+           <img 
               src="images/proof.jpg" 
               alt="Proof of rewards" 
-              className="mx-auto max-w-full h-auto rounded-lg shadow-lg"
+              className="mx-auto w-48 md:w-64 h-auto rounded-lg shadow-lg"
             />
           </div>
 
