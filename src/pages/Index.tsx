@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Modal } from "@/components/ui/modal";
-import { FeatureCard } from "@/components/FeatureCard";
-import { CheckCircle, User, Send, ArrowRight, Users, Star } from "lucide-react";
+import { ArrowRight, Users, Star } from "lucide-react";
 
 const Index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
