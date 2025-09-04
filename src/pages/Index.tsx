@@ -45,8 +45,8 @@ const Index = () => {
       {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-lulu-red/5 to-transparent pointer-events-none" />
 
-      {/* Top bar (reduced padding) */}
-      <header className="relative z-10 flex justify-end p-4">
+      {/* Top bar - minimal padding */}
+      <header className="relative z-10 flex justify-end p-2 md:p-3">
         <Button
           variant="pill"
           size="pill"
@@ -57,61 +57,52 @@ const Index = () => {
         </Button>
       </header>
 
-      {/* Main hero (reduced top spacing) */}
-      <main className="relative z-10 container mx-auto px-4 pt-2 pb-6 md:pt-6 md:pb-10">
-        <div className="max-w-3xl mx-auto text-center space-y-6 md:space-y-8">
-          {/* Headline (forced to 3 lines) */}
+      {/* Main hero - compressed spacing */}
+      <main className="relative z-10 container mx-auto px-4 py-2">
+        <div className="max-w-4xl mx-auto text-center space-y-3 md:space-y-4">
+          {/* Headline - smaller and more compact */}
           <div className="animate-fade-in">
-            <h1 className="font-bold leading-tight tracking-tight text-center">
-              {/* Line 1 */}
-              <span className="block text-[10vw] sm:text-6xl md:text-7xl text-foreground">
+            <h1 className="font-bold leading-none tracking-tight text-center">
+              {/* Line 1 - smaller text */}
+              <span className="block text-[7vw] sm:text-4xl md:text-5xl text-foreground">
                 Exclusive Rewards for
               </span>
 
-              {/* Line 2 */}
+              {/* Line 2 - combined into single line */}
               <span
-                className="block text-[11vw] sm:text-6xl md:text-7xl text-lulu-red animate-glow-pulse"
+                className="block text-[8vw] sm:text-5xl md:text-6xl text-lulu-red animate-glow-pulse"
                 style={{ textShadow: "0 0 24px #E01E3780" }}
               >
-                Lululemon shoppers
+                Lululemon shoppers - Limited Time
               </span>
-
-              {/* Line 3 */}
-              <span
-                className="block text-[11vw] sm:text-6xl md:text-7xl text-lulu-red animate-glow-pulse"
-                style={{ textShadow: "0 0 24px #E01E3780" }}
-              >
-                Limited Time
-              </span>
-              
             </h1>
           </div>
 
-          {/* Feature cards */}
+          {/* Feature cards - more compact */}
           <div
-            className="grid md:grid-cols-3 gap-6 animate-slide-up"
+            className="grid md:grid-cols-3 gap-3 md:gap-4 animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
             <FeatureCard
-              icon={<CheckCircle size={24} />}
+              icon={<CheckCircle size={20} />}
               title="1. Click to Start"
               description="Click the button below to access our reward platform."
             />
             <FeatureCard
-              icon={<User size={24} />}
+              icon={<User size={20} />}
               title="2. Complete Deals"
               description="Finish simple deals to earn reward points. The more tasks you do, the more you earn."
             />
             <FeatureCard
-              icon={<Send size={24} />}
+              icon={<Send size={20} />}
               title="3. Unlock Reward"
               description="Receive your voucher and start shopping."
             />
           </div>
 
-          {/* Primary CTA */}
+          {/* Primary CTA - reduced spacing */}
           <div
-            className="space-y-3 animate-slide-up"
+            className="space-y-2 animate-slide-up"
             style={{ animationDelay: "0.4s" }}
           >
             <Button
@@ -132,25 +123,25 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Trust indicators (all red instead of yellow) */}
+          {/* Trust indicators - more compact */}
           <div
-            className="flex items-center justify-center gap-8 text-muted-foreground text-sm animate-slide-up"
+            className="flex items-center justify-center gap-4 md:gap-6 text-muted-foreground text-sm animate-slide-up"
             style={{ animationDelay: "0.6s" }}
           >
             <div className="flex items-center gap-2">
-              <Users size={16} className="text-lulu-red" />
-              <span>12,000+ users helped</span>
+              <Users size={14} className="text-lulu-red" />
+              <span className="text-xs md:text-sm">12,000+ users helped</span>
             </div>
             <div className="w-1 h-1 bg-muted-foreground rounded-full" />
             <div className="flex items-center gap-2">
-              <Star size={16} className="text-lulu-red fill-lulu-red" />
-              <span>4.8★ average rating</span>
+              <Star size={14} className="text-lulu-red fill-lulu-red" />
+              <span className="text-xs md:text-sm">4.8★ average rating</span>
             </div>
           </div>
 
-          {/* Footer note */}
+          {/* Footer note - smaller and more compact */}
           <p
-            className="text-xs text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-slide-up"
+            className="text-[10px] md:text-xs text-muted-foreground max-w-2xl mx-auto leading-tight animate-slide-up"
             style={{ animationDelay: "0.8s" }}
           >
             This is a promotional experience and is not
@@ -160,7 +151,7 @@ const Index = () => {
         </div>
       </main>
 
-      {/* Live Activity Modal (yellow → red) */}
+      {/* Live Activity Modal */}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-foreground">Live Activity</h3>
