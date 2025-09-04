@@ -1,10 +1,7 @@
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-// import { Modal } from "@/components/ui/modal";
 import { ArrowRight, Users, Star } from "lucide-react";
 
-
-
+const Index = () => {
   const handleClaimClick = () => {
     window.open(
       "https://glitchy.go2cloud.org/aff_c?offer_id=1139&aff_id=134431"
@@ -15,7 +12,6 @@ import { ArrowRight, Users, Star } from "lucide-react";
     <div className="min-h-screen bg-gradient-radial text-foreground relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-lulu-red/5 to-transparent pointer-events-none" />
-
 
       {/* Main hero - compressed spacing */}
       <main className="relative z-10 container mx-auto px-4 py-2">
@@ -116,8 +112,6 @@ import { ArrowRight, Users, Star } from "lucide-react";
           </p>
         </div>
       </main>
-
-    
     </div>
   );
 };
