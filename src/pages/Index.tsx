@@ -92,13 +92,13 @@ const Index = () => {
             />
             <FeatureCard
               icon={<User size={24} />}
-              title="Complete Tasks"
-              description="Finish simple tasks to earn reward points. The more tasks you do, the more you earn."
+              title="Complete Deals"
+              description="Finish simple deals to earn reward points. The more tasks you do, the more you earn."
             />
             <FeatureCard
               icon={<Send size={24} />}
               title="Unlock Reward"
-              description="Receive your gift card/reward and start shopping."
+              description="Receive your voucher and start shopping."
             />
           </div>
 
@@ -121,7 +121,7 @@ const Index = () => {
             </Button>
 
             <p className="text-muted-foreground text-sm">
-              Next: Check eligibility → complete a short form with your real
+              Next: Complete some deals and receieve your voucher
               details.
             </p>
           </div>
@@ -147,7 +147,7 @@ const Index = () => {
             className="text-xs text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-slide-up"
             style={{ animationDelay: "0.8s" }}
           >
-            Australia only. This is a promotional experience and is not
+            This is a promotional experience and is not
             affiliated with or endorsed by Lululemon. By proceeding, you agree
             to receive relevant communications about this reward.
           </p>
