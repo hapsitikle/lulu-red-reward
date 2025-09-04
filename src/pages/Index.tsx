@@ -122,7 +122,6 @@ const Index = () => {
 
             <p className="text-muted-foreground text-sm">
               Next: Complete some deals and receieve your voucher
-              details.
             </p>
           </div>
 
