@@ -156,30 +156,7 @@ const Index = () => {
         </div>
       </main>
 
-      {/* Live Activity Modal */}
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-foreground">Live Activity</h3>
-
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-foreground">Online Now</span>
-              </div>
-              <span className="text-lulu-red font-semibold">{onlineNow}</span>
-            </div>
-
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-lulu-red rounded-full" />
-                <span className="text-foreground">Claims Today</span>
-              </div>
-              <span className="text-lulu-red font-semibold">{claimsToday.toLocaleString()}</span>
-            </div>
-          </div>
-        </div>
-      </Modal>
+    
     </div>
   );
 };
