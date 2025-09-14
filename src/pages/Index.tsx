@@ -43,7 +43,7 @@ const Index = () => {
               <span className="font-semibold">1. Click the button below to start.</span>
             </p>
             <p className="text-sm md:text-base text-foreground">
-              <span className="font-semibold">2. Complete deals to earn reward points. 1 extra deal can get you 100 extra dollars.</span>
+              <span className="font-semibold">2. Complete deals to earn reward points. 1 extra deal can get you up to 100 extra dollars.</span>
             </p>
             <p className="text-sm md:text-base text-foreground">
               <span className="font-semibold">3. Claim your voucher and start shopping. </span>
