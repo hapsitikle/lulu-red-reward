@@ -40,13 +40,13 @@ const Index = () => {
             style={{ animationDelay: "0.2s" }}
           >
             <p className="text-sm md:text-base text-foreground">
-              <span className="font-semibold">1. Click to Start:</span> Click the button below to access our reward platform.
+              <span className="font-semibold">1. Click the button below to start.</span>
             </p>
             <p className="text-sm md:text-base text-foreground">
-              <span className="font-semibold">2. Complete deals:</span> Finish simple deals to earn reward points. The more you do, the more you earn.
+              <span className="font-semibold">2. Complete deals to earn reward points. 1 extra deal can get you 100 extra dollars.</span>
             </p>
             <p className="text-sm md:text-base text-foreground">
-              <span className="font-semibold">3. Unlock Reward:</span> Receive your voucher and start shopping.
+              <span className="font-semibold">3. Claim your voucher and start shopping. </span>
             </p>
           </div>
 
@@ -92,7 +92,7 @@ const Index = () => {
           >
             <div className="flex items-center gap-2">
               <Users size={14} className="text-lulu-red" />
-              <span className="text-xs md:text-sm">12,000+ users helped</span>
+              <span className="text-xs md:text-sm">12,000+ Vouchers Claimed</span>
             </div>
             <div className="w-1 h-1 bg-muted-foreground rounded-full" />
             <div className="flex items-center gap-2">
