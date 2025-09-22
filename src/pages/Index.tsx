@@ -29,7 +29,7 @@ const Index = () => {
                 className="block text-[9vw] sm:text-6xl md:text-7xl text-lulu-red animate-glow-pulse"
                 style={{ textShadow: "0 0 24px #E01E3780" }}
               >
-                Lululemon shoppers - Limited Time
+                Shein shoppers - Limited Time
               </span>
             </h1>
           </div>
@@ -92,7 +92,7 @@ const Index = () => {
           >
             <div className="flex items-center gap-2">
               <Users size={14} className="text-lulu-red" />
-              <span className="text-xs md:text-sm">12,000+ Vouchers Claimed</span>
+              <span className="text-xs md:text-sm">25,000+ Vouchers Claimed</span>
             </div>
             <div className="w-1 h-1 bg-muted-foreground rounded-full" />
             <div className="flex items-center gap-2">
@@ -107,7 +107,7 @@ const Index = () => {
             style={{ animationDelay: "0.9s" }}
           >
             This is a promotional experience and is not
-            affiliated with or endorsed by Lululemon. By proceeding, you agree
+            affiliated with or endorsed by Shein. By proceeding, you agree
             to receive relevant communications about this reward.
           </p>
         </div>
