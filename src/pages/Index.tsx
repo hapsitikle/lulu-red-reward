@@ -4,7 +4,7 @@ import { ArrowRight, Users, Star } from "lucide-react";
 const Index = () => {
   const handleClaimClick = () => {
     window.open(
-      "https://uplevelrewarded.com/aff_c?offer_id=127&aff_id=134431"
+      "https://uplevelrewarded.com/aff_c?offer_id=130&aff_id=134431"
     );
   };
 
