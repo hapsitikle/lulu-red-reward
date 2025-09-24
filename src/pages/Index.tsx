@@ -56,7 +56,7 @@ const Index = () => {
             style={{ animationDelay: "0.3s" }}
           >
             <img 
-              src="images/fake noti.jpeg" 
+              src="images/shein notification.jpeg" 
               alt="Proof of rewards" 
               className="mx-auto w-48 md:w-64 h-auto rounded-lg shadow-lg"
             />
