@@ -23,7 +23,7 @@ const Index = () => {
       title: "Shein shoppers - Limited Time",
       steps: [
         "1. Click the button below to start.",
-        "2. Complete deals to earn reward points. 1 extra deal can get you 100 extra dollars.",
+        "2. Complete 4+ deals.",
         "3. Complete a product review to get additional $750.",
         "4. Claim your voucher and start shopping."
       ]
