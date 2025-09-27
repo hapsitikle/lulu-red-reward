@@ -40,13 +40,16 @@ const Index = () => {
             style={{ animationDelay: "0.2s" }}
           >
             <p className="text-sm md:text-base text-foreground">
-              <span className="font-semibold">1. Click the button below to start.</span>
+              <span className="font-semibold">1. Enter email and basic info.</span>
             </p>
             <p className="text-sm md:text-base text-foreground">
-              <span className="font-semibold">2. Complete deals to earn reward points. 1 extra deal can get you up to 100 extra dollars.</span>
+              <span className="font-semibold">2. Complete 4+ deals to get $750.</span>
             </p>
             <p className="text-sm md:text-base text-foreground">
-              <span className="font-semibold">3. Claim your voucher and start shopping. </span>
+              <span className="font-semibold">3. Tip: Complete a product review to get additional $750!</span>
+            </p>
+            <p className="text-sm md:text-base text-foreground">
+              <span className="font-semibold">4. Claim your voucher and start shopping.</span>
             </p>
           </div>
 
