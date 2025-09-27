@@ -46,7 +46,7 @@ const Index = () => {
               <span className="font-semibold">2. Complete 4+ deals to get $750.</span>
             </p>
             <p className="text-sm md:text-base text-foreground">
-              <span className="font-semibold">3. Tip: Complete a product review to get additional $750!</span>
+              <span className="font-semibold">3. Complete a product review to get additional $750.</span>
             </p>
             <p className="text-sm md:text-base text-foreground">
               <span className="font-semibold">4. Claim your voucher and start shopping.</span>
