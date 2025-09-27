@@ -13,8 +13,8 @@ const Index = () => {
 
   // Affiliate links for each variant
   const affiliateLinks = {
-    reviewer: "https://uplevelrewarded.com/aff_c?offer_id=1227&aff_id=134431",
-    halloween: "YOUR_HALLOWEEN_AFFILIATE_LINK_HERE" // Replace with your actual Halloween link
+    reviewer: "https://uplevelrewarded.com/aff_c?offer_id=1224&aff_id=134431",
+    halloween: "https://uplevelrewarded.com/aff_c?offer_id=1141&aff_id=134431"
   };
 
   // Content for each variant
@@ -22,8 +22,8 @@ const Index = () => {
     reviewer: {
       title: "Shein shoppers - Limited Time",
       steps: [
-        "1. Enter email and basic info.",
-        "2. Complete 4+ deals to get $750.",
+        "1. Click the button below to start.",
+        "2. Complete deals to earn reward points. 1 extra deal can get you 100 extra dollars.",
         "3. Complete a product review to get additional $750.",
         "4. Claim your voucher and start shopping."
       ]
@@ -31,10 +31,9 @@ const Index = () => {
     halloween: {
       title: "Shein shoppers - Halloween Special",
       steps: [
-        "1. Enter email and basic info.",
-        "2. Complete 4+ deals to get $750.",
-        "3. Perfect timing for Halloween shopping!",
-        "4. Claim your voucher and start shopping."
+        "1. Click the button below to start.",
+        "2. Complete deals to earn reward points. 1 extra deal can get you 100 extra dollars.",
+        "3. Claim your voucher and start shopping."
       ]
     }
   };
@@ -83,11 +82,35 @@ const Index = () => {
             className="text-left max-w-2xl mx-auto space-y-2 animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
-            {currentContent.steps.map((step, index) => (
-              <p key={index} className="text-sm md:text-base text-foreground">
-                <span className="font-semibold">{step}</span>
-              </p>
-            ))}
+            {currentContent.steps.map((step, index) => {
+              // Check if this step contains the "1 extra deal" text for special styling
+              const isExtraDealStep = step.includes("1 extra deal can get you 100 extra dollars");
+              
+              if (isExtraDealStep) {
+                // Split the step to highlight the extra deal part
+                const parts = step.split("1 extra deal can get you 100 extra dollars");
+                return (
+                  <p key={index} className="text-sm md:text-base text-foreground">
+                    <span className="font-semibold">
+                      {parts[0]}
+                      <span 
+                        className="text-lulu-red animate-glow-pulse font-bold"
+                        style={{ textShadow: "0 0 12px #E01E3780" }}
+                      >
+                        1 extra deal can get you 100 extra dollars
+                      </span>
+                      {parts[1]}
+                    </span>
+                  </p>
+                );
+              }
+              
+              return (
+                <p key={index} className="text-sm md:text-base text-foreground">
+                  <span className="font-semibold">{step}</span>
+                </p>
+              );
+            })}
           </div>
 
           {/* Proof image */}
