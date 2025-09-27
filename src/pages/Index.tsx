@@ -1,12 +1,56 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Star } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Index = () => {
-  const handleClaimClick = () => {
-    window.open(
-      "https://uplevelrewarded.com/aff_c?offer_id=1227&aff_id=134431"
-    );
+  const [variant, setVariant] = useState(null);
+
+  // Randomly select variant on component mount (50/50 split)
+  useEffect(() => {
+    const isHalloween = Math.random() < 0.5;
+    setVariant(isHalloween ? 'halloween' : 'reviewer');
+  }, []);
+
+  // Affiliate links for each variant
+  const affiliateLinks = {
+    reviewer: "https://uplevelrewarded.com/aff_c?offer_id=1227&aff_id=134431",
+    halloween: "YOUR_HALLOWEEN_AFFILIATE_LINK_HERE" // Replace with your actual Halloween link
   };
+
+  // Content for each variant
+  const content = {
+    reviewer: {
+      title: "Shein shoppers - Limited Time",
+      steps: [
+        "1. Enter email and basic info.",
+        "2. Complete 4+ deals to get $750.",
+        "3. Complete a product review to get additional $750.",
+        "4. Claim your voucher and start shopping."
+      ]
+    },
+    halloween: {
+      title: "Shein shoppers - Halloween Special",
+      steps: [
+        "1. Enter email and basic info.",
+        "2. Complete 4+ deals to get $750.",
+        "3. Perfect timing for Halloween shopping!",
+        "4. Claim your voucher and start shopping."
+      ]
+    }
+  };
+
+  const handleClaimClick = () => {
+    if (variant) {
+      window.open(affiliateLinks[variant]);
+    }
+  };
+
+  // Don't render until variant is selected
+  if (!variant) {
+    return <div className="min-h-screen bg-gradient-radial"></div>;
+  }
+
+  const currentContent = content[variant];
 
   return (
     <div className="min-h-screen bg-gradient-radial text-foreground relative overflow-hidden">
@@ -24,33 +68,26 @@ const Index = () => {
                 Exclusive Rewards for
               </span>
 
-              {/* Line 2 - combined into single line, slightly bigger */}
+              {/* Line 2 - dynamic title based on variant */}
               <span
                 className="block text-[9vw] sm:text-6xl md:text-7xl text-lulu-red animate-glow-pulse"
                 style={{ textShadow: "0 0 24px #E01E3780" }}
               >
-                Shein shoppers - Limited Time
+                {currentContent.title}
               </span>
             </h1>
           </div>
 
-          {/* Steps - simple text format */}
+          {/* Steps - dynamic based on variant */}
           <div
             className="text-left max-w-2xl mx-auto space-y-2 animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <p className="text-sm md:text-base text-foreground">
-              <span className="font-semibold">1. Enter email and basic info.</span>
-            </p>
-            <p className="text-sm md:text-base text-foreground">
-              <span className="font-semibold">2. Complete 4+ deals to get $750.</span>
-            </p>
-            <p className="text-sm md:text-base text-foreground">
-              <span className="font-semibold">3. Complete a product review to get additional $750.</span>
-            </p>
-            <p className="text-sm md:text-base text-foreground">
-              <span className="font-semibold">4. Claim your voucher and start shopping.</span>
-            </p>
+            {currentContent.steps.map((step, index) => (
+              <p key={index} className="text-sm md:text-base text-foreground">
+                <span className="font-semibold">{step}</span>
+              </p>
+            ))}
           </div>
 
           {/* Proof image */}
