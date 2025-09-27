@@ -39,10 +39,10 @@ const Index = () => {
   };
 
   const handleClaimClick = () => {
-    if (variant) {
-      window.open(affiliateLinks[variant]);
-    }
-  };
+  if (variant) {
+    window.location.href = affiliateLinks[variant];
+  }
+};
 
   // Don't render until variant is selected
   if (!variant) {
