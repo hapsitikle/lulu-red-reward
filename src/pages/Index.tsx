@@ -53,10 +53,18 @@ const Index = () => {
       </p>
 
       {/* Shein CTA Button */}
-      <button
-        onClick={handleClaimClick}
-        className={`w-full max-w-md ${isHalloween ? 'bg-pink-500 hover:bg-pink-600' : 'bg-pink-500 hover:bg-pink-600'} text-white font-semibold py-4 px-6 rounded-full mb-6 shein-cta-button cta-pump-enhanced flex items-center justify-center gap-3 shadow-lg ${!isHalloween ? 'cta-glow-pink' : ''}`}
-      >
+      {/* Shein CTA Button */}
+<button
+  onClick={handleClaimClick}
+  className={`w-full max-w-md ${isHalloween ? 'bg-pink-500 hover:bg-pink-600' : 'bg-pink-500 hover:bg-pink-600'} text-white font-medium py-3 px-4 rounded-full mb-6 shein-cta-button cta-pump-enhanced flex items-center justify-center gap-2 shadow-lg ${!isHalloween ? 'cta-glow-pink' : ''}`}
+>
+  <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+    <span className="text-pink-500 font-bold text-xs">S</span>
+  </div>
+  <div className="text-left">
+    <div className="font-bold text-sm">$750 SHEIN Gift Card</div>
+    <div className="text-xs opacity-90">(Enter Email & Complete Deals)</div>
+  </div>
         <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
           <span className="text-pink-500 font-bold text-sm">S</span>
         </div>
@@ -153,30 +161,55 @@ const Index = () => {
         </div>
 
         {/* Proof images carousel */}
-        <div className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
-          <div className="flex-shrink-0 w-full snap-center">
-            <img 
-              src="images/proof1.jpeg" 
-              alt="Proof of Shein reward claim 1" 
-              className="w-full h-64 object-cover rounded-lg shadow-md"
-            />
-          </div>
-          <div className="flex-shrink-0 w-full snap-center">
-            <img 
-              src="images/proof2.jpeg" 
-              alt="Proof of Shein reward claim 2" 
-              className="w-full h-64 object-cover rounded-lg shadow-md"
-            />
-          </div>
-          <div className="flex-shrink-0 w-full snap-center">
-            <img 
-              src="images/proof3.jpeg" 
-              alt="Proof of Shein reward claim 3" 
-              className="w-full h-64 object-cover rounded-lg shadow-md"
-            />
-          </div>
-        </div>
-      </div>
+<div className="infinite-carousel overflow-x-auto scrollbar-hide snap-x snap-mandatory">
+  <div className="flex">
+    {/* Original set */}
+    <div className="flex-shrink-0 w-80 snap-center mr-4">
+      <img 
+        src="images/proof1.jpg" 
+        alt="Proof of Shein reward claim 1" 
+        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
+      />
+    </div>
+    <div className="flex-shrink-0 w-80 snap-center mr-4">
+      <img 
+        src="images/proof2.jpg" 
+        alt="Proof of Shein reward claim 2" 
+        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
+      />
+    </div>
+    <div className="flex-shrink-0 w-80 snap-center mr-4">
+      <img 
+        src="images/proof3.jpg" 
+        alt="Proof of Shein reward claim 3" 
+        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
+      />
+    </div>
+    
+    {/* Duplicate set for infinite scroll */}
+    <div className="flex-shrink-0 w-80 snap-center mr-4">
+      <img 
+        src="images/proof1.jpg" 
+        alt="Proof of Shein reward claim 1" 
+        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
+      />
+    </div>
+    <div className="flex-shrink-0 w-80 snap-center mr-4">
+      <img 
+        src="images/proof2.jpg" 
+        alt="Proof of Shein reward claim 2" 
+        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
+      />
+    </div>
+    <div className="flex-shrink-0 w-80 snap-center mr-4">
+      <img 
+        src="images/proof3.jpg" 
+        alt="Proof of Shein reward claim 3" 
+        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
+      />
+    </div>
+  </div>
+</div>
 
       {/* Trust indicators */}
       <div className={`flex items-center justify-center gap-4 md:gap-6 text-sm mt-6 ${isHalloween ? 'text-gray-400' : 'text-gray-600'}`}>
