@@ -1,319 +1,203 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Users, Star } from "lucide-react";
+import { useState, useEffect } from "react";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-@layer base {
-  :root {
-    --background: 220 15% 8%;
-    --foreground: 0 0% 98%;
-    --card: 220 15% 12%;
-    --card-foreground: 0 0% 98%;
-    --popover: 220 15% 12%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 78% 55%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 220 15% 16%;
-    --secondary-foreground: 0 0% 90%;
-    --muted: 220 15% 16%;
-    --muted-foreground: 220 10% 65%;
-    --accent: 45 86% 58%;
-    --accent-foreground: 220 15% 8%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 220 15% 20%;
-    --input: 220 15% 16%;
-    --ring: 0 78% 55%;
-    --radius: 0.75rem;
-    /* Custom Lululemon design tokens */
-    --lulu-red: 0 78% 55%;
-    --lulu-red-glow: 0 78% 55%;
-    --gold-accent: 45 86% 58%;
-    --charcoal: 220 15% 8%;
-    --charcoal-light: 220 15% 12%;
-    --charcoal-lighter: 220 15% 16%;
-    
-    /* Gradients */
-    --gradient-radial: radial-gradient(circle at center, hsl(220 15% 12%) 0%, hsl(220 15% 6%) 100%);
-    --gradient-glow: 0 0 40px hsl(var(--lulu-red) / 0.3);
-    --gradient-card-glow: 0 0 20px hsl(var(--lulu-red) / 0.1);
-    
-    /* Shadows */
-    --shadow-glow: 0 0 30px hsl(var(--lulu-red) / 0.4);
-    --shadow-card: 0 8px 32px hsl(220 15% 4% / 0.8);
-    --shadow-button: 0 4px 20px hsl(var(--lulu-red) / 0.3);
-    
-    /* Animations */
-    --transition-glow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+const Index = () => {
+  const [variant, setVariant] = useState(null);
+
+  // Randomly select variant on component mount (50/50 split)
+  useEffect(() => {
+    const isHalloween = Math.random() < 0.5;
+    setVariant(isHalloween ? 'halloween' : 'reviewer');
+  }, []);
+
+  // Affiliate links for each variant
+  const affiliateLinks = {
+    reviewer: "https://uplevelrewarded.com/aff_c?offer_id=1224&aff_id=134431",
+    halloween: "https://uplevelrewarded.com/aff_c?offer_id=1141&aff_id=134431"
+  };
+
+  const handleClaimClick = () => {
+    if (variant) {
+      window.location.href = affiliateLinks[variant];
+    }
+  };
+
+  // Don't render until variant is selected
+  if (!variant) {
+    return <div className="min-h-screen bg-gray-50"></div>;
   }
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
+  const isHalloween = variant === 'halloween';
 
-/* Custom animations for the new landing page design */
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px hsl(var(--lulu-red) / 0.3);
-  }
-  50% {
-    box-shadow: 0 0 30px hsl(var(--lulu-red) / 0.6);
-  }
-}
+  return (
+    <div className={`min-h-screen ${isHalloween ? 'halloween-gradient' : 'reviewer-gradient-pink'} flex flex-col items-center justify-center px-4 py-4 fade-in-up`}>
+      {/* Dollar icon */}
+      <div className={`w-16 h-16 ${isHalloween ? 'bg-white' : 'bg-white'} rounded-full flex items-center justify-center mb-4 relative shadow-lg`}>
+        <span className="text-2xl font-bold text-black">$</span>
+        <div className="absolute -top-2 -right-2 sparkle-animation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L14.09 8.26L20 10L14.09 11.74L12 18L9.91 11.74L4 10L9.91 8.26L12 2Z" fill={isHalloween ? "#ec4899" : "#ec4899"}/>
+            <path d="M5 3L6 6L9 7L6 8L5 11L4 8L1 7L4 6L5 3Z" fill={isHalloween ? "#f9a8d4" : "#fbbf24"}/>
+          </svg>
+        </div>
+      </div>
 
-@keyframes cta-pump {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.04);
-  }
-}
+      {/* Main headline */}
+      <h1 className={`text-2xl md:text-3xl font-bold text-center mb-3 ${isHalloween ? 'text-pink-400 halloween-text-glow' : 'text-pink-500'}`}>
+        Claim Your Gift Card Now!
+      </h1>
 
-@keyframes cta-pump-enhanced {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.06);
-  }
-}
+      <p className={`text-center mb-6 ${isHalloween ? 'text-gray-300' : 'text-gray-600'}`}>
+        Higher value deals = faster rewards!
+      </p>
 
-@keyframes sparkle {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
-  25% {
-    opacity: 0.8;
-    transform: scale(1.1) rotate(90deg);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.3) rotate(180deg);
-  }
-  75% {
-    opacity: 0.7;
-    transform: scale(1.1) rotate(270deg);
-  }
-}
+      {/* Shein CTA Button */}
+      <button
+        onClick={handleClaimClick}
+        className={`w-full max-w-md ${isHalloween ? 'bg-pink-500 hover:bg-pink-600' : 'bg-pink-500 hover:bg-pink-600'} text-white font-semibold py-4 px-6 rounded-full mb-6 shein-cta-button cta-pump-enhanced flex items-center justify-center gap-3 shadow-lg ${!isHalloween ? 'cta-glow-pink' : ''}`}
+      >
+        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+          <span className="text-pink-500 font-bold text-sm">S</span>
+        </div>
+        <div className="text-left">
+          <div className="font-bold">$750 SHEIN Gift Card</div>
+          <div className="text-sm opacity-90">(Enter Email & Complete Deals)</div>
+        </div>
+      </button>
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      {/* Steps */}
+      <div className={`w-full max-w-lg ${isHalloween ? 'bg-gray-900' : 'bg-white'} rounded-2xl p-6 shadow-lg step-card ${isHalloween ? 'halloween' : ''} mb-6`}>
+        <div className="space-y-6">
+          {/* Step 1 */}
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 step-number">
+              1
+            </div>
+            <div>
+              <h3 className={`font-semibold ${isHalloween ? 'text-white' : 'text-gray-900'} mb-1`}>
+                Click A Button Above 👆
+              </h3>
+              <p className={`text-sm ${isHalloween ? 'text-gray-400' : 'text-gray-600'}`}>
+                Start your gift card claim process
+              </p>
+            </div>
+          </div>
 
-@keyframes bounce-subtle {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-2px);
-  }
-}
+          {/* Step 2 */}
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 step-number">
+              2
+            </div>
+            <div>
+              <h3 className={`font-semibold ${isHalloween ? 'text-white' : 'text-gray-900'} mb-1`}>
+                Enter Your Email & Basic Info
+              </h3>
+              <p className={`text-sm ${isHalloween ? 'text-gray-400' : 'text-gray-600'}`}>
+                We need this to send your gift card
+              </p>
+            </div>
+          </div>
 
-/* Enhanced button animations */
-.shein-cta-button {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: pulse-glow 3s infinite;
-}
+          {/* Step 3 */}
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 step-number">
+              3
+            </div>
+            <div>
+              <h3 className={`font-semibold ${isHalloween ? 'text-white' : 'text-gray-900'} mb-1`}>
+                Complete Recommended Deals
+              </h3>
+              <p className={`text-sm ${isHalloween ? 'text-gray-400' : 'text-gray-600'}`}>
+                (Higher value deals = faster rewards!)
+              </p>
+            </div>
+          </div>
 
-.cta-pump {
-  animation: cta-pump 2s ease-in-out infinite;
-}
+          {/* Step 4 */}
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 step-number">
+              4
+            </div>
+            <div>
+              <h3 className={`font-semibold ${isHalloween ? 'text-white' : 'text-gray-900'} mb-1`}>
+                Claim Your Gift Card!
+              </h3>
+              <p className={`text-sm ${isHalloween ? 'text-gray-400' : 'text-gray-600'}`}>
+                Your reward is waiting for you!
+              </p>
+            </div>
+          </div>
+        </div>
 
-.cta-pump-enhanced {
-  animation: cta-pump-enhanced 1.5s ease-in-out infinite;
-}
+        <p className={`text-xs ${isHalloween ? 'text-gray-500' : 'text-gray-500'} text-center mt-6`}>
+          * Terms and conditions apply. Gift card values may vary based on completed offers.
+        </p>
+      </div>
 
-.cta-glow-pink {
-  box-shadow: 0 0 25px rgba(236, 72, 153, 0.3);
-}
+      {/* Shein Top Claims Section */}
+      <div className={`w-full max-w-lg ${isHalloween ? 'bg-gray-900' : 'bg-white'} rounded-2xl p-6 shadow-lg mb-6`}>
+        <h2 className={`text-2xl font-bold text-center mb-2 ${isHalloween ? 'text-pink-400' : 'text-pink-500'}`}>
+          SHEIN Top Claims of the Week
+        </h2>
+        <p className={`text-center text-sm mb-4 ${isHalloween ? 'text-gray-300' : 'text-gray-600'}`}>
+          Real results from real people! 💕
+        </p>
+        
+        {/* Mobile swipe indicator */}
+        <div className="flex items-center justify-center mb-4">
+          <div className={`flex items-center gap-2 text-xs ${isHalloween ? 'text-gray-400' : 'text-gray-500'}`}>
+            <div className="w-3 h-3 rounded-full bg-pink-400"></div>
+            <span>Swipe to see more</span>
+          </div>
+        </div>
 
-.shein-cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px hsl(var(--lulu-red) / 0.4);
-  animation: cta-pump 1s ease-in-out infinite, pulse-glow 3s infinite;
-}
+        {/* Proof images carousel */}
+        <div className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
+          <div className="flex-shrink-0 w-full snap-center">
+            <img 
+              src="images/proof1.jpeg" 
+              alt="Proof of Shein reward claim 1" 
+              className="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+          </div>
+          <div className="flex-shrink-0 w-full snap-center">
+            <img 
+              src="images/proof2.jpeg" 
+              alt="Proof of Shein reward claim 2" 
+              className="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+          </div>
+          <div className="flex-shrink-0 w-full snap-center">
+            <img 
+              src="images/proof3.jpeg" 
+              alt="Proof of Shein reward claim 3" 
+              className="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+          </div>
+        </div>
+      </div>
 
-.shein-cta-button:active {
-  transform: scale(0.95);
-  transition: transform 0.1s;
-}
+      {/* Trust indicators */}
+      <div className={`flex items-center justify-center gap-4 md:gap-6 text-sm mt-6 ${isHalloween ? 'text-gray-400' : 'text-gray-600'}`}>
+        <div className="flex items-center gap-2">
+          <Users size={14} className="text-pink-500" />
+          <span className="text-xs md:text-sm">25,000+ Vouchers Claimed</span>
+        </div>
+        <div className="w-1 h-1 bg-gray-400 rounded-full" />
+        <div className="flex items-center gap-2">
+          <Star size={14} className="text-pink-500 fill-pink-500" />
+          <span className="text-xs md:text-sm">4.8★ average rating</span>
+        </div>
+      </div>
 
-/* Sparkle animation for Halloween variant */
-.sparkle-animation {
-  animation: sparkle 2s infinite;
-}
+      {/* Footer note */}
+      <p className={`text-xs ${isHalloween ? 'text-gray-500' : 'text-gray-500'} max-w-2xl mx-auto text-center mt-4 leading-tight`}>
+        This is a promotional experience and is not affiliated with or endorsed by Shein. 
+        By proceeding, you agree to receive relevant communications about this reward.
+      </p>
+    </div>
+  );
+};
 
-/* Smooth fade in for entire page */
-.fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-/* Custom gradients using your existing color system */
-.halloween-gradient {
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
-}
-
-.reviewer-gradient {
-  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 50%, #f9fafb 100%);
-}
-
-.reviewer-gradient-pink {
-  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 30%, #fcf4ff 70%, #fdf2f8 100%);
-}
-
-/* Step card hover effects */
-.step-card {
-  transition: all 0.3s ease;
-}
-
-.step-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.step-card.halloween:hover {
-  box-shadow: 0 8px 25px hsl(var(--lulu-red) / 0.2);
-}
-
-/* Number circle pulse effect */
-.step-number {
-  transition: all 0.3s ease;
-}
-
-.step-number:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 15px hsl(var(--lulu-red) / 0.4);
-}
-
-/* Text glow effect for Halloween using your color system */
-.halloween-text-glow {
-  text-shadow: 0 0 10px hsl(var(--lulu-red) / 0.5);
-}
-
-/* Loading spinner if needed */
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.loading-spinner {
-  animation: spin 1s linear infinite;
-}
-
-/* Focus states for accessibility */
-.shein-cta-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px hsl(var(--lulu-red));
-}
-
-/* Custom scrollbar for better UX */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--lulu-red));
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--lulu-red) / 0.8);
-}
-
-/* Responsive adjustments */
-@media (max-width: 640px) {
-  .shein-cta-button {
-    padding: 12px 20px;
-  }
-  
-  .step-card {
-    padding: 16px;
-  }
-  
-  .fade-in-up {
-    animation-duration: 0.4s;
-  }
-}
-
-/* Additional utility classes for consistency */
-.text-shadow-glow {
-  text-shadow: 0 0 10px hsl(var(--lulu-red) / 0.3);
-}
-
-.bg-glow {
-  box-shadow: 0 0 20px hsl(var(--lulu-red) / 0.2);
-}
-
-.border-glow {
-  border: 1px solid hsl(var(--lulu-red) / 0.3);
-  box-shadow: 0 0 10px hsl(var(--lulu-red) / 0.1);
-}
-
-/* Hide scrollbar for proof images carousel */
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
+export default Index;
