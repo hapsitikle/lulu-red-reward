@@ -210,6 +210,5 @@ const Index = () => {
       </p>
     </div>
   );
-};
 
 export default Index;
