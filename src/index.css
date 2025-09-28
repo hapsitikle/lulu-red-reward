@@ -111,7 +111,16 @@ All colors MUST be HSL.
     transform: scale(1);
   }
   50% {
-    transform: scale(1.02);
+    transform: scale(1.04);
+  }
+}
+
+@keyframes cta-pump-enhanced {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
   }
 }
 
@@ -164,6 +173,14 @@ All colors MUST be HSL.
   animation: cta-pump 2s ease-in-out infinite;
 }
 
+.cta-pump-enhanced {
+  animation: cta-pump-enhanced 1.5s ease-in-out infinite;
+}
+
+.cta-glow-pink {
+  box-shadow: 0 0 25px rgba(236, 72, 153, 0.3);
+}
+
 .shein-cta-button:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px hsl(var(--lulu-red) / 0.4);
@@ -177,7 +194,7 @@ All colors MUST be HSL.
 
 /* Sparkle animation for Halloween variant */
 .sparkle-animation {
-  animation: sparkle 3s infinite;
+  animation: sparkle 2s infinite;
 }
 
 /* Smooth fade in for entire page */
@@ -192,6 +209,10 @@ All colors MUST be HSL.
 
 .reviewer-gradient {
   background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 50%, #f9fafb 100%);
+}
+
+.reviewer-gradient-pink {
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 30%, #fcf4ff 70%, #fdf2f8 100%);
 }
 
 /* Step card hover effects */
@@ -285,4 +306,14 @@ All colors MUST be HSL.
 .border-glow {
   border: 1px solid hsl(var(--lulu-red) / 0.3);
   box-shadow: 0 0 10px hsl(var(--lulu-red) / 0.1);
+}
+
+/* Hide scrollbar for proof images carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
