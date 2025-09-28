@@ -17,164 +17,140 @@ const Index = () => {
     halloween: "https://uplevelrewarded.com/aff_c?offer_id=1141&aff_id=134431"
   };
 
-  // Content for each variant
-  const content = {
-    reviewer: {
-      title: "Shein shoppers - Limited Time",
-      steps: [
-        "1. Enter email & basic info.",
-        "2. Complete 4+ deals.",
-        "3. Complete a product review to get additional $750.",
-        "4. Claim your voucher and start shopping."
-      ]
-    },
-    halloween: {
-      title: "Shein shoppers - Halloween Special",
-      steps: [
-        "1. Click the button below to start.",
-        "2. Complete deals to earn reward points. 1 extra deal can get you 100 extra dollars.",
-        "3. Claim your voucher and start shopping."
-      ]
+  const handleClaimClick = () => {
+    if (variant) {
+      window.location.href = affiliateLinks[variant];
     }
   };
 
-  const handleClaimClick = () => {
-  if (variant) {
-    window.location.href = affiliateLinks[variant];
-  }
-};
-
   // Don't render until variant is selected
   if (!variant) {
-    return <div className="min-h-screen bg-gradient-radial"></div>;
+    return <div className="min-h-screen bg-gray-50"></div>;
   }
 
-  const currentContent = content[variant];
+  const isHalloween = variant === 'halloween';
 
   return (
-    <div className="min-h-screen bg-gradient-radial text-foreground relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-lulu-red/5 to-transparent pointer-events-none" />
+    <div className={`min-h-screen ${isHalloween ? 'bg-black' : 'bg-gray-50'} flex flex-col items-center justify-center px-4 py-8`}>
+      {/* Dollar icon */}
+      <div className={`w-16 h-16 ${isHalloween ? 'bg-white' : 'bg-white'} rounded-full flex items-center justify-center mb-8 relative shadow-lg`}>
+        <span className="text-2xl font-bold text-black">$</span>
+        {isHalloween && (
+          <div className="absolute -top-2 -right-2 text-pink-400 text-xl">✨</div>
+        )}
+      </div>
 
-      {/* Main hero - compressed spacing */}
-      <main className="relative z-10 container mx-auto px-4 pt-8 pb-2">
-        <div className="max-w-4xl mx-auto text-center space-y-3 md:space-y-4">
-          {/* Headline - smaller and more compact */}
-          <div className="animate-fade-in">
-            <h1 className="font-bold leading-none tracking-tight text-center">
-              {/* Line 1 - slightly bigger text */}
-              <span className="block text-[8vw] sm:text-5xl md:text-6xl text-foreground">
-                Exclusive Rewards for
-              </span>
+      {/* Main headline */}
+      <h1 className={`text-4xl md:text-5xl font-bold text-center mb-4 ${isHalloween ? 'text-pink-400' : 'text-pink-500'}`}>
+        Claim Your Gift Card Now!
+      </h1>
 
-              {/* Line 2 - dynamic title based on variant */}
-              <span
-                className="block text-[9vw] sm:text-6xl md:text-7xl text-lulu-red animate-glow-pulse"
-                style={{ textShadow: "0 0 24px #E01E3780" }}
-              >
-                {currentContent.title}
-              </span>
-            </h1>
-          </div>
+      <p className={`text-center mb-8 ${isHalloween ? 'text-gray-300' : 'text-gray-600'}`}>
+        Higher value deals = faster rewards!
+      </p>
 
-          {/* Steps - dynamic based on variant */}
-          <div
-            className="text-left max-w-2xl mx-auto space-y-2 animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            {currentContent.steps.map((step, index) => {
-              // Check if this step contains the "1 extra deal" text for special styling
-              const isExtraDealStep = step.includes("1 extra deal can get you 100 extra dollars");
-              
-              if (isExtraDealStep) {
-                // Split the step to highlight the extra deal part
-                const parts = step.split("1 extra deal can get you 100 extra dollars");
-                return (
-                  <p key={index} className="text-sm md:text-base text-foreground">
-                    <span className="font-semibold">
-                      {parts[0]}
-                      <span 
-                        className="text-lulu-red animate-glow-pulse font-bold"
-                        style={{ textShadow: "0 0 12px #E01E3780" }}
-                      >
-                        1 extra deal can get you 100 extra dollars
-                      </span>
-                      {parts[1]}
-                    </span>
-                  </p>
-                );
-              }
-              
-              return (
-                <p key={index} className="text-sm md:text-base text-foreground">
-                  <span className="font-semibold">{step}</span>
-                </p>
-              );
-            })}
-          </div>
-
-          {/* Proof image */}
-          <div
-            className="animate-slide-up"
-            style={{ animationDelay: "0.3s" }}
-          >
-            <img 
-              src="images/shein notification.jpeg" 
-              alt="Proof of rewards" 
-              className="mx-auto w-48 md:w-64 h-auto rounded-lg shadow-lg"
-            />
-          </div>
-
-          {/* Primary CTA - reduced spacing */}
-          <div
-            className="space-y-2 animate-slide-up"
-            style={{ animationDelay: "0.5s" }}
-          >
-            <Button
-              variant="hero"
-              size="xl"
-              onClick={handleClaimClick}
-              className="group"
-            >
-              Claim Your Reward
-              <ArrowRight
-                className="group-hover:translate-x-1 transition-transform duration-300"
-                size={20}
-              />
-            </Button>
-
-            <p className="text-muted-foreground text-sm">
-              Next: Complete some deals and receieve your voucher
-            </p>
-          </div>
-
-          {/* Trust indicators - more compact */}
-          <div
-            className="flex items-center justify-center gap-4 md:gap-6 text-muted-foreground text-sm animate-slide-up"
-            style={{ animationDelay: "0.7s" }}
-          >
-            <div className="flex items-center gap-2">
-              <Users size={14} className="text-lulu-red" />
-              <span className="text-xs md:text-sm">25,000+ Vouchers Claimed</span>
-            </div>
-            <div className="w-1 h-1 bg-muted-foreground rounded-full" />
-            <div className="flex items-center gap-2">
-              <Star size={14} className="text-lulu-red fill-lulu-red" />
-              <span className="text-xs md:text-sm">4.8★ average rating</span>
-            </div>
-          </div>
-
-          {/* Footer note - smaller and more compact */}
-          <p
-            className="text-[10px] md:text-xs text-muted-foreground max-w-2xl mx-auto leading-tight animate-slide-up"
-            style={{ animationDelay: "0.9s" }}
-          >
-            This is a promotional experience and is not
-            affiliated with or endorsed by Shein. By proceeding, you agree
-            to receive relevant communications about this reward.
-          </p>
+      {/* Shein CTA Button */}
+      <button
+        onClick={handleClaimClick}
+        className={`w-full max-w-md ${isHalloween ? 'bg-pink-500 hover:bg-pink-600' : 'bg-pink-500 hover:bg-pink-600'} text-white font-semibold py-4 px-6 rounded-full mb-8 transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-lg`}
+      >
+        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+          <span className="text-pink-500 font-bold text-sm">S</span>
         </div>
-      </main>
+        <div className="text-left">
+          <div className="font-bold">$750 SHEIN Gift Card</div>
+          <div className="text-sm opacity-90">(Enter Email & Complete Deals)</div>
+        </div>
+      </button>
+
+      {/* Steps */}
+      <div className={`w-full max-w-lg ${isHalloween ? 'bg-gray-900' : 'bg-white'} rounded-2xl p-6 shadow-lg`}>
+        <div className="space-y-6">
+          {/* Step 1 */}
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+              1
+            </div>
+            <div>
+              <h3 className={`font-semibold ${isHalloween ? 'text-white' : 'text-gray-900'} mb-1`}>
+                Click A Button Above 👆
+              </h3>
+              <p className={`text-sm ${isHalloween ? 'text-gray-400' : 'text-gray-600'}`}>
+                Start your gift card claim process
+              </p>
+            </div>
+          </div>
+
+          {/* Step 2 */}
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+              2
+            </div>
+            <div>
+              <h3 className={`font-semibold ${isHalloween ? 'text-white' : 'text-gray-900'} mb-1`}>
+                Enter Your Email & Basic Info
+              </h3>
+              <p className={`text-sm ${isHalloween ? 'text-gray-400' : 'text-gray-600'}`}>
+                We need this to send your gift card
+              </p>
+            </div>
+          </div>
+
+          {/* Step 3 */}
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+              3
+            </div>
+            <div>
+              <h3 className={`font-semibold ${isHalloween ? 'text-white' : 'text-gray-900'} mb-1`}>
+                Complete Recommended Deals
+              </h3>
+              <p className={`text-sm ${isHalloween ? 'text-gray-400' : 'text-gray-600'}`}>
+                (Higher value deals = faster rewards!)
+              </p>
+            </div>
+          </div>
+
+          {/* Step 4 */}
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+              4
+            </div>
+            <div>
+              <h3 className={`font-semibold ${isHalloween ? 'text-white' : 'text-gray-900'} mb-1`}>
+                Claim Your Gift Card!
+              </h3>
+              <p className={`text-sm ${isHalloween ? 'text-gray-400' : 'text-gray-600'}`}>
+                Your reward is waiting for you!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Disclaimer */}
+        <p className={`text-xs ${isHalloween ? 'text-gray-500' : 'text-gray-500'} text-center mt-6`}>
+          * Terms and conditions apply. Gift card values may vary based on completed offers.
+        </p>
+      </div>
+
+      {/* Trust indicators */}
+      <div className={`flex items-center justify-center gap-4 md:gap-6 text-sm mt-6 ${isHalloween ? 'text-gray-400' : 'text-gray-600'}`}>
+        <div className="flex items-center gap-2">
+          <Users size={14} className="text-pink-500" />
+          <span className="text-xs md:text-sm">25,000+ Vouchers Claimed</span>
+        </div>
+        <div className="w-1 h-1 bg-gray-400 rounded-full" />
+        <div className="flex items-center gap-2">
+          <Star size={14} className="text-pink-500 fill-pink-500" />
+          <span className="text-xs md:text-sm">4.8★ average rating</span>
+        </div>
+      </div>
+
+      {/* Footer note */}
+      <p className={`text-xs ${isHalloween ? 'text-gray-500' : 'text-gray-500'} max-w-2xl mx-auto text-center mt-4 leading-tight`}>
+        This is a promotional experience and is not affiliated with or endorsed by Shein. 
+        By proceeding, you agree to receive relevant communications about this reward.
+      </p>
     </div>
   );
 };
