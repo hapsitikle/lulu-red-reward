@@ -5,39 +5,28 @@
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
-
 @layer base {
   :root {
     --background: 220 15% 8%;
     --foreground: 0 0% 98%;
-
     --card: 220 15% 12%;
     --card-foreground: 0 0% 98%;
-
     --popover: 220 15% 12%;
     --popover-foreground: 0 0% 98%;
-
     --primary: 0 78% 55%;
     --primary-foreground: 0 0% 98%;
-
     --secondary: 220 15% 16%;
     --secondary-foreground: 0 0% 90%;
-
     --muted: 220 15% 16%;
     --muted-foreground: 220 10% 65%;
-
     --accent: 45 86% 58%;
     --accent-foreground: 220 15% 8%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-
     --border: 220 15% 20%;
     --input: 220 15% 16%;
     --ring: 0 78% 55%;
-
     --radius: 0.75rem;
-
     /* Custom Lululemon design tokens */
     --lulu-red: 0 78% 55%;
     --lulu-red-glow: 0 78% 55%;
@@ -58,49 +47,32 @@ All colors MUST be HSL.
     
     /* Animations */
     --transition-glow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
@@ -119,8 +91,176 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom animations for the new landing page design */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--lulu-red) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(var(--lulu-red) / 0.6);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Enhanced button animations */
+.shein-cta-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: pulse-glow 3s infinite;
+}
+
+.shein-cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px hsl(var(--lulu-red) / 0.4);
+}
+
+.shein-cta-button:active {
+  transform: scale(0.95);
+  transition: transform 0.1s;
+}
+
+/* Sparkle animation for Halloween variant */
+.sparkle-animation {
+  animation: sparkle 2s infinite;
+}
+
+/* Smooth fade in for entire page */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Custom gradients using your existing color system */
+.halloween-gradient {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+}
+
+.reviewer-gradient {
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 50%, #f9fafb 100%);
+}
+
+/* Step card hover effects */
+.step-card {
+  transition: all 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.step-card.halloween:hover {
+  box-shadow: 0 8px 25px hsl(var(--lulu-red) / 0.2);
+}
+
+/* Number circle pulse effect */
+.step-number {
+  transition: all 0.3s ease;
+}
+
+.step-number:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px hsl(var(--lulu-red) / 0.4);
+}
+
+/* Text glow effect for Halloween using your color system */
+.halloween-text-glow {
+  text-shadow: 0 0 10px hsl(var(--lulu-red) / 0.5);
+}
+
+/* Loading spinner if needed */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Focus states for accessibility */
+.shein-cta-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--lulu-red));
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--lulu-red));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--lulu-red) / 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .shein-cta-button {
+    padding: 12px 20px;
+  }
+  
+  .step-card {
+    padding: 16px;
+  }
+  
+  .fade-in-up {
+    animation-duration: 0.4s;
+  }
+}
+
+/* Additional utility classes for consistency */
+.text-shadow-glow {
+  text-shadow: 0 0 10px hsl(var(--lulu-red) / 0.3);
+}
+
+.bg-glow {
+  box-shadow: 0 0 20px hsl(var(--lulu-red) / 0.2);
+}
+
+.border-glow {
+  border: 1px solid hsl(var(--lulu-red) / 0.3);
+  box-shadow: 0 0 10px hsl(var(--lulu-red) / 0.1);
 }
