@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Star } from "lucide-react";
 import { useState, useEffect } from "react";
+import './index.css';
+
 
 const Index = () => {
   const [variant, setVariant] = useState(null);
