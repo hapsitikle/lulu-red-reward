@@ -55,8 +55,7 @@ const Index = () => {
       </p>
 
       {/* Shein CTA Button */}
-      {/* Shein CTA Button */}
-<button
+      <button
   onClick={handleClaimClick}
   className={`w-full max-w-md ${isHalloween ? 'bg-pink-500 hover:bg-pink-600' : 'bg-pink-500 hover:bg-pink-600'} text-white font-medium py-3 px-4 rounded-full mb-6 shein-cta-button cta-pump-enhanced flex items-center justify-center gap-2 shadow-lg ${!isHalloween ? 'cta-glow-pink' : ''}`}
 >
@@ -67,14 +66,8 @@ const Index = () => {
     <div className="font-bold text-sm">$750 SHEIN Gift Card</div>
     <div className="text-xs opacity-90">(Enter Email & Complete Deals)</div>
   </div>
-        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-          <span className="text-pink-500 font-bold text-sm">S</span>
-        </div>
-        <div className="text-left">
-          <div className="font-bold">$750 SHEIN Gift Card</div>
-          <div className="text-sm opacity-90">(Enter Email & Complete Deals)</div>
-        </div>
-      </button>
+</button>
+
 
       {/* Steps */}
       <div className={`w-full max-w-lg ${isHalloween ? 'bg-gray-900' : 'bg-white'} rounded-2xl p-6 shadow-lg step-card ${isHalloween ? 'halloween' : ''} mb-6`}>
