@@ -106,14 +106,31 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes cta-pump {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
 @keyframes sparkle {
   0%, 100% {
     opacity: 1;
     transform: scale(1) rotate(0deg);
   }
+  25% {
+    opacity: 0.8;
+    transform: scale(1.1) rotate(90deg);
+  }
   50% {
+    opacity: 0.9;
+    transform: scale(1.3) rotate(180deg);
+  }
+  75% {
     opacity: 0.7;
-    transform: scale(1.2) rotate(180deg);
+    transform: scale(1.1) rotate(270deg);
   }
 }
 
@@ -143,9 +160,14 @@ All colors MUST be HSL.
   animation: pulse-glow 3s infinite;
 }
 
+.cta-pump {
+  animation: cta-pump 2s ease-in-out infinite;
+}
+
 .shein-cta-button:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px hsl(var(--lulu-red) / 0.4);
+  animation: cta-pump 1s ease-in-out infinite, pulse-glow 3s infinite;
 }
 
 .shein-cta-button:active {
@@ -155,7 +177,7 @@ All colors MUST be HSL.
 
 /* Sparkle animation for Halloween variant */
 .sparkle-animation {
-  animation: sparkle 2s infinite;
+  animation: sparkle 3s infinite;
 }
 
 /* Smooth fade in for entire page */
