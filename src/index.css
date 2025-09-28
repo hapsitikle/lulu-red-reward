@@ -120,7 +120,7 @@ All colors MUST be HSL.
     transform: scale(1);
   }
   50% {
-    transform: scale(1.06);
+    transform: scale(1.04);
   }
 }
 
@@ -174,7 +174,7 @@ All colors MUST be HSL.
 }
 
 .cta-pump-enhanced {
-  animation: cta-pump-enhanced 1.5s ease-in-out infinite;
+  animation: cta-pump-enhanced 1.8s ease-in-out infinite;
 }
 
 .cta-glow-pink {
@@ -306,7 +306,7 @@ All colors MUST be HSL.
 /* Mobile responsive adjustments */
 @media (max-width: 640px) {
   .infinite-carousel .flex > div {
-    width: 280px;
+    width: 240px;
   }
 }
 
