@@ -31,17 +31,22 @@ const Index = () => {
   const isHalloween = variant === 'halloween';
 
   return (
-    <div className={`min-h-screen ${isHalloween ? 'bg-black' : 'bg-gray-50'} flex flex-col items-center justify-center px-4 py-8`}>
+    <div className={`min-h-screen ${isHalloween ? 'halloween-gradient' : 'reviewer-gradient'} flex flex-col items-center justify-center px-4 py-8 fade-in-up`}>
       {/* Dollar icon */}
       <div className={`w-16 h-16 ${isHalloween ? 'bg-white' : 'bg-white'} rounded-full flex items-center justify-center mb-8 relative shadow-lg`}>
         <span className="text-2xl font-bold text-black">$</span>
         {isHalloween && (
-          <div className="absolute -top-2 -right-2 text-pink-400 text-xl">✨</div>
+          <div className="absolute -top-2 -right-2 sparkle-animation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L14.09 8.26L20 10L14.09 11.74L12 18L9.91 11.74L4 10L9.91 8.26L12 2Z" fill="#ec4899"/>
+              <path d="M5 3L6 6L9 7L6 8L5 11L4 8L1 7L4 6L5 3Z" fill="#f9a8d4"/>
+            </svg>
+          </div>
         )}
       </div>
 
       {/* Main headline */}
-      <h1 className={`text-4xl md:text-5xl font-bold text-center mb-4 ${isHalloween ? 'text-pink-400' : 'text-pink-500'}`}>
+      <h1 className={`text-4xl md:text-5xl font-bold text-center mb-4 ${isHalloween ? 'text-pink-400 halloween-text-glow' : 'text-pink-500'}`}>
         Claim Your Gift Card Now!
       </h1>
 
@@ -52,7 +57,7 @@ const Index = () => {
       {/* Shein CTA Button */}
       <button
         onClick={handleClaimClick}
-        className={`w-full max-w-md ${isHalloween ? 'bg-pink-500 hover:bg-pink-600' : 'bg-pink-500 hover:bg-pink-600'} text-white font-semibold py-4 px-6 rounded-full mb-8 transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-lg`}
+        className={`w-full max-w-md ${isHalloween ? 'bg-pink-500 hover:bg-pink-600' : 'bg-pink-500 hover:bg-pink-600'} text-white font-semibold py-4 px-6 rounded-full mb-8 shein-cta-button cta-pump flex items-center justify-center gap-3 shadow-lg`}
       >
         <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
           <span className="text-pink-500 font-bold text-sm">S</span>
@@ -64,11 +69,11 @@ const Index = () => {
       </button>
 
       {/* Steps */}
-      <div className={`w-full max-w-lg ${isHalloween ? 'bg-gray-900' : 'bg-white'} rounded-2xl p-6 shadow-lg`}>
+      <div className={`w-full max-w-lg ${isHalloween ? 'bg-gray-900' : 'bg-white'} rounded-2xl p-6 shadow-lg step-card ${isHalloween ? 'halloween' : ''}`}>
         <div className="space-y-6">
           {/* Step 1 */}
           <div className="flex items-start gap-4">
-            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 step-number">
               1
             </div>
             <div>
@@ -83,7 +88,7 @@ const Index = () => {
 
           {/* Step 2 */}
           <div className="flex items-start gap-4">
-            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 step-number">
               2
             </div>
             <div>
@@ -98,7 +103,7 @@ const Index = () => {
 
           {/* Step 3 */}
           <div className="flex items-start gap-4">
-            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 step-number">
               3
             </div>
             <div>
@@ -113,7 +118,7 @@ const Index = () => {
 
           {/* Step 4 */}
           <div className="flex items-start gap-4">
-            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+            <div className="w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 step-number">
               4
             </div>
             <div>
