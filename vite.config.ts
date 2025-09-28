@@ -15,7 +15,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: [], // ensure no dependency resolution issues
+      external: ["@tanstack/react-query"], // 👈 add this line
     },
   },
 });
