@@ -155,7 +155,7 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Proof images carousel */}
+{/* Proof images carousel */}
 <div className="infinite-carousel overflow-x-auto scrollbar-hide snap-x snap-mandatory">
   <div className="flex">
     {/* Original set */}
@@ -182,7 +182,10 @@ const Index = () => {
     </div>
   </div>
 </div>
+      </div>
 
+      {/* Trust indicators */}
+        
       {/* Trust indicators */}
       <div className={`flex items-center justify-center gap-4 md:gap-6 text-sm mt-6 ${isHalloween ? 'text-gray-400' : 'text-gray-600'}`}>
         <div className="flex items-center gap-2">
@@ -203,5 +206,8 @@ const Index = () => {
       </p>
     </div>
   );
+  </div>
+  );
+};
 
 export default Index;
