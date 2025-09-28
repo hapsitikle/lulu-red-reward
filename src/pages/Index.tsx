@@ -35,14 +35,12 @@ const Index = () => {
       {/* Dollar icon */}
       <div className={`w-16 h-16 ${isHalloween ? 'bg-white' : 'bg-white'} rounded-full flex items-center justify-center mb-8 relative shadow-lg`}>
         <span className="text-2xl font-bold text-black">$</span>
-        {isHalloween && (
-          <div className="absolute -top-2 -right-2 sparkle-animation">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L14.09 8.26L20 10L14.09 11.74L12 18L9.91 11.74L4 10L9.91 8.26L12 2Z" fill="#ec4899"/>
-              <path d="M5 3L6 6L9 7L6 8L5 11L4 8L1 7L4 6L5 3Z" fill="#f9a8d4"/>
-            </svg>
-          </div>
-        )}
+        <div className="absolute -top-2 -right-2 sparkle-animation">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2L14.09 8.26L20 10L14.09 11.74L12 18L9.91 11.74L4 10L9.91 8.26L12 2Z" fill={isHalloween ? "#ec4899" : "#ec4899"}/>
+    <path d="M5 3L6 6L9 7L6 8L5 11L4 8L1 7L4 6L5 3Z" fill={isHalloween ? "#f9a8d4" : "#fbbf24"}/>
+  </svg>
+</div>
       </div>
 
       {/* Main headline */}
