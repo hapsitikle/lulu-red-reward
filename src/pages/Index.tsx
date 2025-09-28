@@ -144,7 +144,7 @@ const Index = () => {
       </div>
 
       {/* Shein Top Claims Section */}
-      <div className={`w-full max-w-lg ${isHalloween ? 'bg-gray-900' : 'bg-white'} rounded-2xl p-6 shadow-lg mb-6`}>
+      <div className="w-full max-w-lg mb-6">
         <h2 className={`text-2xl font-bold text-center mb-2 ${isHalloween ? 'text-pink-400' : 'text-pink-500'}`}>
           SHEIN Top Claims of the Week
         </h2>
@@ -164,48 +164,25 @@ const Index = () => {
 <div className="infinite-carousel overflow-x-auto scrollbar-hide snap-x snap-mandatory">
   <div className="flex">
     {/* Original set */}
-    <div className="flex-shrink-0 w-80 snap-center mr-4">
+    <div className="flex-shrink-0 w-60 snap-center mr-4">
       <img 
         src="images/proof1.jpg" 
         alt="Proof of Shein reward claim 1" 
-        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
+        className="w-full h-auto max-h-72 object-contain rounded-lg shadow-md"
       />
     </div>
-    <div className="flex-shrink-0 w-80 snap-center mr-4">
+    <div className="flex-shrink-0 w-60 snap-center mr-4">
       <img 
         src="images/proof2.jpg" 
         alt="Proof of Shein reward claim 2" 
-        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
+        className="w-full h-auto max-h-72 object-contain rounded-lg shadow-md"
       />
     </div>
-    <div className="flex-shrink-0 w-80 snap-center mr-4">
+    <div className="flex-shrink-0 w-60 snap-center mr-4">
       <img 
         src="images/proof3.jpg" 
         alt="Proof of Shein reward claim 3" 
-        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
-      />
-    </div>
-    
-    {/* Duplicate set for infinite scroll */}
-    <div className="flex-shrink-0 w-80 snap-center mr-4">
-      <img 
-        src="images/proof1.jpg" 
-        alt="Proof of Shein reward claim 1" 
-        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
-      />
-    </div>
-    <div className="flex-shrink-0 w-80 snap-center mr-4">
-      <img 
-        src="images/proof2.jpg" 
-        alt="Proof of Shein reward claim 2" 
-        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
-      />
-    </div>
-    <div className="flex-shrink-0 w-80 snap-center mr-4">
-      <img 
-        src="images/proof3.jpg" 
-        alt="Proof of Shein reward claim 3" 
-        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
+        className="w-full h-auto max-h-72 object-contain rounded-lg shadow-md"
       />
     </div>
   </div>
