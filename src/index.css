@@ -294,6 +294,22 @@ All colors MUST be HSL.
   }
 }
 
+/* Infinite carousel for proof images */
+.infinite-carousel {
+  scroll-behavior: smooth;
+}
+
+.infinite-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .infinite-carousel .flex > div {
+    width: 280px;
+  }
+}
+
 /* Additional utility classes for consistency */
 .text-shadow-glow {
   text-shadow: 0 0 10px hsl(var(--lulu-red) / 0.3);
