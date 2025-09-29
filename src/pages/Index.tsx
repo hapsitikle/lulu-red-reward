@@ -223,6 +223,7 @@ const Index = () => {
           <span className="text-xs md:text-sm">4.8★ average rating</span>
         </div>
       </div>
+        </div>
 
       {/* Footer note */}
       <p className={`text-xs ${isHalloween ? 'text-gray-500' : 'text-gray-500'} max-w-2xl mx-auto text-center mt-4 leading-tight`}>
