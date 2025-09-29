@@ -55,7 +55,7 @@ const Index = () => {
             </div>
             <div>
               <h3 className="font-semibold text-white mb-1">
-                Click A Button Above 👆
+                Click The Button Above 👆
               </h3>
               <p className="text-sm text-gray-400">
                 Start your gift card claim process
