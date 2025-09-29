@@ -155,36 +155,61 @@ const Index = () => {
           </div>
         </div>
 
-{/* Proof images carousel */}
-<div className="infinite-carousel overflow-x-auto scrollbar-hide snap-x snap-mandatory">
-  <div className="flex">
-    {/* Original set */}
-    <div className="flex-shrink-0 w-60 snap-center mr-4">
+
+      {/* Proof images carousel */}
+<div className="w-full px-4">
+  {/* Desktop view - show all 3 images side by side */}
+  <div className="hidden md:flex md:justify-center md:gap-6">
+    <div className="w-80">
       <img 
-        src="/images/proof1.jpeg" 
+        src="/images/proof1.jpg" 
         alt="Proof of Shein reward claim 1" 
-        className="w-full h-auto max-h-72 object-contain rounded-lg shadow-md"
+        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
       />
     </div>
-    <div className="flex-shrink-0 w-60 snap-center mr-4">
+    <div className="w-80">
       <img 
-        src="/images/proof2.jepg" 
+        src="/images/proof2.jpg" 
         alt="Proof of Shein reward claim 2" 
-        className="w-full h-auto max-h-72 object-contain rounded-lg shadow-md"
+        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
       />
     </div>
-    <div className="flex-shrink-0 w-60 snap-center mr-4">
+    <div className="w-80">
       <img 
-        src="/images/proof3.jpeg" 
+        src="/images/proof3.jpg" 
         alt="Proof of Shein reward claim 3" 
-        className="w-full h-auto max-h-72 object-contain rounded-lg shadow-md"
+        className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
       />
     </div>
   </div>
-</div>
-      </div>
 
-      {/* Trust indicators */}
+  {/* Mobile view - scrollable carousel */}
+  <div className="md:hidden overflow-x-auto scrollbar-hide snap-x snap-mandatory">
+    <div className="flex gap-4 px-2">
+      <div className="flex-shrink-0 w-72 snap-center">
+        <img 
+          src="/images/proof1.jpg" 
+          alt="Proof of Shein reward claim 1" 
+          className="w-full h-auto max-h-[500px] object-contain rounded-lg shadow-md"
+        />
+      </div>
+      <div className="flex-shrink-0 w-72 snap-center">
+        <img 
+          src="/images/proof2.jpg" 
+          alt="Proof of Shein reward claim 2" 
+          className="w-full h-auto max-h-[500px] object-contain rounded-lg shadow-md"
+        />
+      </div>
+      <div className="flex-shrink-0 w-72 snap-center">
+        <img 
+          src="/images/proof3.jpg" 
+          alt="Proof of Shein reward claim 3" 
+          className="w-full h-auto max-h-[500px] object-contain rounded-lg shadow-md"
+        />
+      </div>
+    </div>
+  </div>
+</div>
         
       {/* Trust indicators */}
       <div className={`flex items-center justify-center gap-4 md:gap-6 text-sm mt-6 ${isHalloween ? 'text-gray-400' : 'text-gray-600'}`}>
