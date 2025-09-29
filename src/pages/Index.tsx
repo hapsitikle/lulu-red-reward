@@ -162,21 +162,21 @@ const Index = () => {
   <div className="hidden md:flex md:justify-center md:gap-6">
     <div className="w-80">
       <img 
-        src="/images/proof1.jpg" 
+        src="/images/proof1.jpeg" 
         alt="Proof of Shein reward claim 1" 
         className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
       />
     </div>
     <div className="w-80">
       <img 
-        src="/images/proof2.jpg" 
+        src="/images/proof2.jpeg" 
         alt="Proof of Shein reward claim 2" 
         className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
       />
     </div>
     <div className="w-80">
       <img 
-        src="/images/proof3.jpg" 
+        src="/images/proof3.jpeg" 
         alt="Proof of Shein reward claim 3" 
         className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
       />
@@ -188,21 +188,21 @@ const Index = () => {
     <div className="flex gap-4 px-2">
       <div className="flex-shrink-0 w-72 snap-center">
         <img 
-          src="/images/proof1.jpg" 
+          src="/images/proof1.jpeg" 
           alt="Proof of Shein reward claim 1" 
           className="w-full h-auto max-h-[500px] object-contain rounded-lg shadow-md"
         />
       </div>
       <div className="flex-shrink-0 w-72 snap-center">
         <img 
-          src="/images/proof2.jpg" 
+          src="/images/proof2.jpeg" 
           alt="Proof of Shein reward claim 2" 
           className="w-full h-auto max-h-[500px] object-contain rounded-lg shadow-md"
         />
       </div>
       <div className="flex-shrink-0 w-72 snap-center">
         <img 
-          src="/images/proof3.jpg" 
+          src="/images/proof3.jpeg" 
           alt="Proof of Shein reward claim 3" 
           className="w-full h-auto max-h-[500px] object-contain rounded-lg shadow-md"
         />
