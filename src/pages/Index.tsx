@@ -161,21 +161,21 @@ const Index = () => {
     {/* Original set */}
     <div className="flex-shrink-0 w-60 snap-center mr-4">
       <img 
-        src="images/proof1.jpeg" 
+        src="/images/proof1.jpeg" 
         alt="Proof of Shein reward claim 1" 
         className="w-full h-auto max-h-72 object-contain rounded-lg shadow-md"
       />
     </div>
     <div className="flex-shrink-0 w-60 snap-center mr-4">
       <img 
-        src="images/proof2.jepg" 
+        src="/images/proof2.jepg" 
         alt="Proof of Shein reward claim 2" 
         className="w-full h-auto max-h-72 object-contain rounded-lg shadow-md"
       />
     </div>
     <div className="flex-shrink-0 w-60 snap-center mr-4">
       <img 
-        src="images/proof3.jpeg" 
+        src="/images/proof3.jpeg" 
         alt="Proof of Shein reward claim 3" 
         className="w-full h-auto max-h-72 object-contain rounded-lg shadow-md"
       />
