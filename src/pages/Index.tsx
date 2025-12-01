@@ -6,7 +6,7 @@ import '../index.css';
 
 const Index = () => {
   const handleClaimClick = () => {
-    window.location.href = "https://uplevelrewarded.com/aff_c?offer_id=1141&aff_id=134431";
+    window.location.href = "https://trkio.org/aff_c?offer_id=1224&aff_id=134431";
   };
 
   return (
