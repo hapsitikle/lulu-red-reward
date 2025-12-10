@@ -166,7 +166,7 @@ const Index = () => {
               Receive Your Voucher By Email
             </h2>
             <p className="text-center text-sm mb-4 text-gray-300">
-              Complete deals and receive your voucher. ✨
+              Perfect to buy stuffs this Christmas! 🎄
             </p>
           </>
         )}
