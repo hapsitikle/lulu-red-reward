@@ -163,11 +163,10 @@ const Index = () => {
         {variant === "email" && (
           <>
             <h2 className="text-2xl font-bold text-center mb-2 text-pink-400">
-              Example $750 SHEIN Voucher Email
+              Receive Your Voucher By Email
             </h2>
             <p className="text-center text-sm mb-4 text-gray-300">
-              Here&apos;s a sample confirmation email people receive after
-              completing their deals. 📩
+              Complete deals and receive your voucher. ✨
             </p>
           </>
         )}
@@ -175,11 +174,10 @@ const Index = () => {
         {variant === "cart" && (
           <>
             <h2 className="text-2xl font-bold text-center mb-2 text-pink-400">
-              Example SHEIN Cart With Voucher Applied
+              Cover Your Christmas Shopping and More
             </h2>
             <p className="text-center text-sm mb-4 text-gray-300">
-              Preview of how a SHEIN cart can look once a voucher is applied at
-              checkout.
+              Hot offer not to be missed this Christmas. 🎁
             </p>
           </>
         )}
